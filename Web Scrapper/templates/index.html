@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Scraper & Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>🔍 Web Scraper & Summarizer</h1>
+                <p>Extract and summarize webpage content with AI</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="input-section">
+                <div class="input-group">
+                    <label for="urlInput">Enter URL:</label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            id="urlInput" 
+                            placeholder="e.g., https://example.com or example.com"
+                            class="url-input"
+                        >
+                        <button id="scrapeBtn" class="btn btn-primary">
+                            <span class="btn-text">Scrape & Summarize</span>
+                            <span class="btn-spinner hidden"></span>
+                        </button>
+                        <button id="clearBtn" class="btn btn-secondary">Clear</button>
+                    </div>
+                    <small class="help-text">Enter any URL to fetch and summarize its content</small>
+                </div>
+            </section>
+
+            <section id="resultSection" class="result-section hidden">
+                <div class="result-header">
+                    <h2>Summary</h2>
+                    <button id="copyBtn" class="btn btn-secondary btn-small">Copy to Clipboard</button>
+                </div>
+                <div id="summaryContent" class="summary-content">
+                    <!-- Summary will be rendered here -->
+                </div>
+                <div class="source-info">
+                    <small>Source: <span id="sourceUrl"></span></small>
+                </div>
+            </section>
+
+            <section id="errorSection" class="error-section hidden">
+                <div class="error-message">
+                    <strong>Error:</strong> <span id="errorText"></span>
+                </div>
+                <button id="closeErrorBtn" class="btn btn-secondary btn-small">Dismiss</button>
+            </section>
+
+            <section id="loadingSection" class="loading-section hidden">
+                <div class="loader"></div>
+                <p>Processing your request...</p>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Powered by Ollama Falcon:7B | Built with Flask</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
