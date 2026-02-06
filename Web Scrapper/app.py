@@ -96,7 +96,7 @@ def summarize():
         system_prompt = """You are an expert content summarizer. Your task is to create a detailed markdown summary of the webpage content.
 
 Guidelines:
-- Start with the website summary in 75 words - (Don't use the numeric terms "75 words" or "50 words" in the output)
+- Start with the website summary in 75 words - (Don't use the numeric terms "75 words" or "50 words" or "30 words" or "100 words" in the output)
 - Make summary for each sub-headings about 30 words
 - Focus strictly on the content.
 - Do NOT use generic headers like "Executive Summary", "Introduction", or "Conclusion".
